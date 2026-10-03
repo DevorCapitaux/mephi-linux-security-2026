@@ -1,0 +1,44 @@
+    1  sudo groupadd students
+    2  sudo useradd -m -u 1234 -G students user1
+    3  sudo passwd user1
+    4  sudo chage -d 0 -m 0 -M 90 user1
+    5  groups user1
+    6  chage -l user1
+    7  sudo chage -l user1
+    8  sudo grep user1 /etc/shadow
+    9  clear
+   10  find / -perm -4000 2>/dev/null
+   11  ps -eo euid,ruid,pid,comm | awk '$1 == 0 && $2 != 0'
+   12  clear
+   13  which cat
+   14  cat /etc/passwd
+   15  clear
+   16  cat /etc/shadow
+   17  cp /usr/bin/cat .
+   18  ls -l
+   19  sudo chown root cat 
+   20  ls -l
+   21  ./cat /etc/shadow
+   22  chmod u+s cat 
+   23  sudo chmod u+s cat 
+   24  ls -l
+   25  ./cat /etc/shadow
+   26  which cat
+   27  clear
+   28  touch tmp_file
+   29  ls -l
+   30  ls -l | grpe tmp_file
+   31  ls -l | grep tmp_file
+   32  chown user1 tmp_file 
+   33  which chown
+   34  cp /usr/bin/chown .
+   35  ls -l | grep chown
+   36  sudo setcap "cap_chown=ep" chown
+   37  getcap ./chown 
+   38  chown user1 tmp_file 
+   39  ./chown user1 tmp_file
+   40  ls -l | grep tmp_file
+   41  clear
+   42  sudo -i -u user1
+   43  clear
+   44  history
